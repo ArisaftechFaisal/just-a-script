@@ -1,6 +1,6 @@
 {
-  "name": "just-a-script-forge",
-  "productName": "just-a-script-forge",
+  "name": "just-a-script",
+  "productName": "just-a-script",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
