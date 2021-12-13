@@ -256,8 +256,8 @@ function ReplaceString(): JSX.Element {
         {progress.total !== 0 &&
           progress.done + progress.failed === progress.total && (
             <Typography variant="overline">
-              Succeeded: {progress.done}, Failed: {progress.failed}, Total:{" "}
-              {progress.total}
+              Succeeded: {progress.done}, Failed: {progress.failed}, Total
+              files:{progress.total}
             </Typography>
           )}
       </Container>
