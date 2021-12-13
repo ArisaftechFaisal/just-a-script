@@ -12,7 +12,7 @@
     "lint": "eslint --ext .ts,.tsx ."
   },
   "keywords": [],
-  "author": "dfais",
+  "author": "Faisal Mahmood <faisal.arisaftech@gmail.com>",
   "license": "MIT",
   "config": {
     "forge": {
