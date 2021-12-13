@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es2021",
     "allowJs": true,
     "module": "commonjs",
+    "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
+    "pretty": true,
+    "declaration": true,
+    "declarationMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -10,6 +16,8 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
     "typeRoots": ["node_modules/@types/*", "src/@types/*"],
     "paths": {
       "*": ["node_modules/*"]

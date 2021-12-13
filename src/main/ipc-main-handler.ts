@@ -1,16 +1,16 @@
-import { BrowserWindow, dialog, ipcMain } from 'electron';
-import CHANNELS from './channels';
-import { replaceInXlsxFilesInFolder } from './operations';
+import { BrowserWindow, dialog, ipcMain, shell } from "electron";
+import CHANNELS from "./channels";
+import { replaceInXlsxFilesInFolder } from "./operations";
 
 const initIpcMain = (): void => {
   ipcMain.handle(CHANNELS.SELECT_FOLDER, async (e): Promise<DialogRet> => {
     const win = BrowserWindow.fromWebContents(e.sender);
     // eslint-disable-next-line eqeqeq
-    if (win == undefined) return { path: '', canceled: true };
+    if (win == undefined) return { path: "", canceled: true };
     const res = await dialog.showOpenDialog(win, {
-      properties: ['openDirectory'],
-      buttonLabel: 'Select',
-      defaultPath: '',
+      properties: ["openDirectory"],
+      buttonLabel: "Select",
+      defaultPath: "",
     });
     return {
       path: res.filePaths[0],
@@ -24,6 +24,10 @@ const initIpcMain = (): void => {
       return replaceInXlsxFilesInFolder(event, args);
     }
   );
+
+  ipcMain.handle(CHANNELS.OPEN_CONTAINING_FOLDER, (_, path: string) => {
+    shell.showItemInFolder(path);
+  });
 };
 
 export default initIpcMain;
